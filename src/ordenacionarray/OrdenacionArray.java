@@ -24,17 +24,37 @@ public class OrdenacionArray {
                     listaNumeros[i]= listaNumeros[i+1];
                     listaNumeros[i+1]=auxiliar;
                 }
-                
+            
             }
         }
         for(int x=0; x<listaNumeros.length; x++){
             System.out.print(listaNumeros[x] + " ");
         }
+        System.out.println();  
+    }
+    public void ordenacionBurbujaWhile(int[] lista){
+        
+        int auxiliar= 0;
+        boolean cambio = true;
+        int indice = 1;
+        
+        while(cambio){
+            cambio = false;
+            for(int i = 0; i< lista.length - indice; i++){
+                
+                if(lista[i]>lista[i+1]){
+                    auxiliar = lista[i];
+                    lista[i] = lista[i+1];
+                    lista[i+1] = auxiliar;
+                    cambio = true;
+                }
+                indice++;
+            }
+        }
+        for(int j = 0; j<lista.length; j++){
+            System.out.print(lista[j] + " ");
+        }
         System.out.println();
-        
-        
-        
-        
     }
 
     
@@ -47,6 +67,9 @@ public class OrdenacionArray {
         
         ejercicios.ordenacionBurbuja(lista1);
         ejercicios.ordenacionBurbuja(lista2);
+        
+        ejercicios.ordenacionBurbujaWhile(lista1);
+        ejercicios.ordenacionBurbujaWhile(lista2);
     }
     
 }
